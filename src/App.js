@@ -11,6 +11,7 @@ import {
 import Home from './components/home';
 import Why from './components/why';
 import ParentComp from './components/parentComp';
+import CommentsSec from './components/comments';
 // import history from './history';
 
 function App() {
@@ -24,7 +25,10 @@ function App() {
           <Why />
         </Route>
         <Route path="/pass">
-          <ParentComp/>
+          <ParentComp />
+        </Route>
+        <Route path="/comments">
+          <CommentsSec />
         </Route>
       </Switch>
     </Router>

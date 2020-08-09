@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import { FaHome,FaQuestion,FaDatabase } from 'react-icons/fa';
+import { FaHome,FaQuestion,FaDatabase,FaComment } from 'react-icons/fa';
 
 
 export default function Header() {
@@ -17,6 +17,9 @@ export default function Header() {
                         </li>
                         <li className="nav-item">
                             <Link to={"/pass"}>Passing<FaDatabase/></Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link to={"/comments"}>Comments<FaComment/></Link>
                         </li>
                     </ul>
                 </div>

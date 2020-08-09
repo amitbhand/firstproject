@@ -3,7 +3,6 @@ import style from '../css/why.module.scss'
 import Root from './root';
 
 export default function Why() {
-    console.log(style);
     return (
         <Root>
             <div className="container">

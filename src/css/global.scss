@@ -9,7 +9,7 @@ body {
 
 .nav-item {
     padding: 20px;
-    
+
     a {
         font-size: 22px;
         color: black !important;
@@ -30,13 +30,13 @@ body {
     top: 50%;
     left: 50%;
     background-color: white;
-    box-shadow: 0 0 20px -15px #000;
     transform: translate(-50%, -50%);
     transition: all ease 0.3s;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 0 20px -15px #000;
     border-radius: 5px;
 
     h1 {
@@ -60,11 +60,62 @@ body {
     animation: slow-hover infinite 5s linear;
 }
 
+.comment-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 0;
+
+    li {
+        width: 48%;
+        background-color: white;
+        padding: 20px;
+        box-shadow: 12px 13px 20px -15px #000;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        transition: all ease 0.3s;
+        text-align: center;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            box-shadow: 20px 20px 20px -15px #000;
+        }
+
+        h6 {
+            margin-bottom: 15px;
+            font-weight: bold;
+            font-family: 'DancingScript';
+            font-size: 25px;
+        }
+
+        p {
+            margin: 0;
+        }
+    }
+}
+
+.img-c {
+    width: 800px;
+    height: 300px;
+    margin: 20px auto 0;
+    border-radius: 20px;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
 @keyframes slow-hover {
-    0,
-    20%,
-    50%,
-    80%,
+    
     100% {
         transform: translate(-50%, -50%);
     }

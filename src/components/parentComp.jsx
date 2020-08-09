@@ -5,27 +5,26 @@ class ParentComp extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        bgColor: 'red',
+        bgColor: 'white',
         inputValue: '',
         inputDisable: true
       }
       this.changeBg = this.changeBg.bind(this);
-      this.changeInput = this.changeInput.bind(this);
+      // this.handleSubmit = this.handleSubmit.bind(this);
     }
+      
     changeBg(event) {
-        event.preventDefault();
-        this.setState({
-            bgColor: event.target.value,
-            inputValue: '',
-            inputDisable: true
-        });
+      this.setState({
+          bgColor: event.target.value,
+          inputValue: event.target.value,
+      });
     }
-    
-    changeInput(event) {
-        this.setState({
-            bgColor: event.target.value,
-            inputValue: event.target.value,
-        });
+
+    handleSubmit = (e) => {
+      e.preventDefault();
+      alert('A color was submitted: ' + this.state.value);
+      if (e.key === 'Enter') {
+      }
     }
     
     componentDidMount() {
@@ -43,8 +42,8 @@ class ParentComp extends React.Component {
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 m-auto">
-                        <div className="boxF">
-                            <ChildComp color={this.state.bgColor} input={this.state.inputValue} changeBg={this.changeBg} changeInput={this.changeInput} inputDisable={this.state.inputDisable}/>
+                        <div className="boxF" style={{backgroundColor:this.state.bgColor}}>
+                            <ChildComp input={this.state.inputValue} changeBg={this.changeBg} inputDisable={this.state.inputDisable} onKeyDown={this.handleKeyPress}/>
                         </div>
                     </div>
                 </div>
@@ -58,9 +57,9 @@ class ParentComp extends React.Component {
     render() {
       return (
       <div>
-        <h1 style={{backgroundColor:this.props.color}}>Change Background!</h1>
-        <form>
-            <input value={this.props.input} onChange={this.props.changeInput} disabled={this.props.inputDisable} placeholder="Enter Color!"/>
+        <h1>Change Background!</h1>
+        <form onSubmit={this.handleSubmit}>
+            <input value={this.props.input} onChange={this.props.changeBg} disabled={this.props.inputDisable} placeholder="Enter Color!"/>
         </form>
       </div>
       );
