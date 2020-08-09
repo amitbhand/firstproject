@@ -55,9 +55,6 @@ class ParentComp extends React.Component {
   };
   
   class ChildComp extends React.Component {
-    constructor(props) {
-      super(props);
-    }
     render() {
       return (
       <div>
